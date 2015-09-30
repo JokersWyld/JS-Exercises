@@ -1,0 +1,109 @@
+var user = prompt("You've awakened to dawn in the middle of a forest.  You are unaware of your surroundings.  You decide to explore.  Would you like to travel North, South, East or West?").toUpperCase();
+
+switch(user) {
+    case 'NORTH':
+        console.log("You walk to the North.  It's cold!  You come upon a frozen river.");
+        var northQ = prompt("Would you like to attempt to walk across the river?").toUpperCase();
+        var northQ2 = prompt("Do you have snowshoes?").toUpperCase();
+        if (northQ === 'YES') {
+            northQ = true;
+        } else if (northQ === 'NO') {
+            northQ = false;
+        } else {
+            console.log("You should've answered 'Yes or No'.");
+            northQ = false;
+        }
+        if (northQ2 === 'YES') {
+            northQ2 = true;
+        } else if (northQ2 === 'NO') {
+            northQ2 = false;
+        } else {
+            console.log("You should've answered 'Yes or No'.");
+            northQ = false;
+        }
+        if (northQ && northQ2) {
+            console.log("You made it across!  Unfortunately, you awakened a yeti and you are too tired to run.  He invites you into a nearby cave where you are regaled with boring Yeti poetry until your demise.");
+        } else {
+            console.log("YOU ARE NOT PREPARED... for cold weather.  You freeze into a human popcicle just like the Shining.");
+        }
+        break;
+    case 'SOUTH':
+        console.log("You walk to the South.  It's hot!  You come upon a desert.");
+        var southQ = prompt("You think you see an oasis to the left and another to the right.  Do you proceed left or right?").toUpperCase();
+        var southQ2 = prompt("Do you have canteen of water?").toUpperCase();
+        if (southQ === 'LEFT') {
+            southQ = true;
+        } else if (southQ === 'RIGHT') {
+            southQ = true;
+        } else {
+            console.log("You should've answered 'Left or Right'.");
+            southQ = false;
+        }
+        if (southQ2 === 'YES') {
+            southQ2 = true;
+        } else if (southQ2 === 'NO') {
+            southQ2 = false;
+        } else {
+            console.log("You should've answered 'Yes or No'.");
+            southQ2 = false;
+        }
+        if (southQ || southQ2) {
+            console.log("You drink all the water that is available.  You continue south.  Unbeknowst to you, the water you drank was laced with LSD and you start having a bad trip.  You decide this is a good place to contemplate the taste of red.");
+        } else {
+            console.log("FEEL THE WRATH OF 10,000 DEGREES!  You wander off into the desert, dehydrate and die.  Why would you do that?");
+        }
+        break;
+    case 'EAST':
+        console.log("You walk to the East.  It's a bit breezy.  You come upon a mountain pass.");
+        var EastQ = prompt("Would you like to attempt to walk through the mountain pass?").toUpperCase();
+        var EastQ2 = prompt("Can you cast Blink?").toUpperCase();
+        if (EastQ === 'YES') {
+            EastQ = true;
+        } else if (EastQ === 'NO') {
+            EastQ = false;
+        } else {
+            console.log("You should've answered 'Yes or No'.  Your indecision, or horrible spelling, has led to you being eaten by a mountain lion.  Hakuna Matata.");
+            break;
+        }
+        if (EastQ2 === 'YES') {
+            EastQ2 = true;
+        } else if (EastQ2 === 'NO') {
+            EastQ2 = false;
+        } else {
+            console.log("You should've answered 'Yes or No'.  As you contemplate your arcane abilities, you trip on a beetle and impale yourself on a rock.  GJ clutz!");
+            break;
+        }
+        if (EastQ && EastQ2) {
+            console.log("You decide to go through the pass.  As you near the middle a rockfall begins.  Fortunately, you studied the spell 'Blink'.  You are able to blink away right before are mashed to bits.  Unfortunately, you never actually 'Mastered' the spell.  You blink halfway into a tree and die.  Oops!");
+        } else {
+            console.log("You notice some Mountain Giants start wrestling with each other and cause an avalanche of rocks!  Guess who's smooshed.  Yup, it's you.");
+        }
+        break;
+    case 'WEST':
+        console.log("You walk to the West.  It's pretty nice here.  You come upon the shore of an ocean.");
+        var WestQ = prompt("You notice a surfboard.  Would you like to try surfing?").toUpperCase();
+        var WestQ2 = prompt("Can you swim?").toUpperCase();
+        if (WestQ === 'YES') {
+            WestQ = true;
+        } else if (WestQ === 'NO') {
+            WestQ = false;
+        } else {
+            console.log("You should've answered 'Yes or No'.");
+        }
+        if (WestQ2 === 'YES') {
+            WestQ2 = true;
+        } else if (WestQ2 === 'NO') {
+            WestQ2 = false;
+        } else {
+            console.log("You should've answered 'Yes or No'.");
+        }
+        if (WestQ || WestQ2) {
+            console.log("You study the surfboard and realize it's missing fins.  As you lift the surfboard to examine it further, you realize the board was covering a pit of huge Top Hat wearing sandcrabs.  They politely ask you to return their roof.  You oblige and move on your way.  As you ponder what just happened, Ghostcrawler sneaks up from behind and snips the edges of your belt causing your pants to fall down.  All the crabs notice and laugh at you.  How rude.");
+        } else {
+            console.log("You turn around and decide that that would have been a bad idea.  You decide that you'd like to shimmy a nearby palm tree for a coconut.  40 feet up you have no idea how to get back down.  The sand looks soft, so you jump.  The sand was hiding a sarlacc pit.  You proceed to spend the next 1000 years digesting away.");
+        }
+        break;
+    default:
+        console.log("You didn't choose North, South, East or West.  You were eaten by a Gru.  Better luck next time!");
+        break;
+}
