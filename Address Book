@@ -1,0 +1,61 @@
+//Object containing contact data
+var bob = {
+    firstName: "Bob",
+    lastName: "Jones",
+    phoneNumber: "(650) 777-7777",
+    email: "bob.jones@example.com"
+};
+
+//Object containing contact data
+var mary = {
+    firstName: "Mary",
+    lastName: "Johnson",
+    phoneNumber: "(650) 888-8888",
+    email: "mary.johnson@example.com"
+};
+
+//Array calling previous objects bob and mary
+var contacts = [bob, mary];
+
+//printPerson function that will print out to console the firstName and lastName
+function printPerson(person) {
+    console.log(person.firstName + " " + person.lastName);
+}
+
+//List function that will call the printPerson function for every value in the contacts array
+function list() {
+	var contactsLength = contacts.length;
+	for (var i = 0; i < contactsLength; i++) {
+		printPerson(contacts[i]);
+	}
+}
+
+//Search function that will read what was called to match in the lastName in the contacts array
+function search(lastName) {
+    var contactsLength = contacts.length;
+	for (var i = 0; i < contactsLength; i++) {
+		if (contacts[i].lastName === lastName) {
+		    printPerson(contacts[i]);
+		}
+	}
+};
+
+//Call search function for Jones
+search("Jones");
+
+//Add function setting up parameters to insert details into contacts Array
+var add = function(firstName, lastName, email, phoneNumber){
+    contacts[contacts.length] = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phoneNumber: phoneNumber
+    };
+};
+
+//Call add function to add 2 contacts into contacts array
+add("Bob", "Dole", "Bob@dole.com", "858.555.5555");
+add("Luke", "Skywalker", "TheForceIsWithYou@LS.com", "750.555.1234");
+
+//Call list function do display all contacts
+list();
